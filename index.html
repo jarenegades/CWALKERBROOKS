@@ -476,6 +476,9 @@ const CONNECTIONS = [
 const IS_MOBILE = window.innerWidth < 768;
 const EXTRUDE = 0.15;
 const SCALE = (IS_MOBILE ? 5.8 : 8.4) / (maxLon-minLon);
+const CAMERA_CONFIG = IS_MOBILE
+    ? {fov:52, x:0.7, y:13, z:14, scrollX:0.6, scrollY:1.5, scrollZ:1, mouseX:0.12, mouseY:0.08}
+    : {fov:38, x:1.5, y:8, z:7, scrollX:1.5, scrollY:2.5, scrollZ:2, mouseX:0.3, mouseY:0.15};
 
 function projectCoord([lon,lat]){
     return new THREE.Vector2((lon-mapCx)*SCALE,(lat-mapCy)*SCALE);
@@ -509,8 +512,8 @@ function toWorld(lon,lat){
 const canvas = document.getElementById('map-canvas');
 const fallback = document.getElementById('map-fallback');
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(38, window.innerWidth/window.innerHeight, 0.1, 200);
-camera.position.set(1.5, 8, 7);
+const camera = new THREE.PerspectiveCamera(CAMERA_CONFIG.fov, window.innerWidth/window.innerHeight, 0.1, 200);
+camera.position.set(CAMERA_CONFIG.x, CAMERA_CONFIG.y, CAMERA_CONFIG.z);
 camera.lookAt(0,0,0);
 
 const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
@@ -651,9 +654,9 @@ function animate(){
     edges.rotation.z = island.rotation.z;
 
     // Camera
-    const camX = 1.5 + scrollProg*1.5 + mx*.3;
-    const camY = 8 - scrollProg*2.5 + my*-.15;
-    const camZ = 7 - scrollProg*2;
+    const camX = CAMERA_CONFIG.x + scrollProg*CAMERA_CONFIG.scrollX + mx*CAMERA_CONFIG.mouseX;
+    const camY = CAMERA_CONFIG.y - scrollProg*CAMERA_CONFIG.scrollY + my*-CAMERA_CONFIG.mouseY;
+    const camZ = CAMERA_CONFIG.z - scrollProg*CAMERA_CONFIG.scrollZ;
     camera.position.x += (camX-camera.position.x)*.04;
     camera.position.y += (camY-camera.position.y)*.04;
     camera.position.z += (camZ-camera.position.z)*.04;
