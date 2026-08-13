@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CWALKER BROOKS & Associates Services Limited | Company Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script type="importmap">
+    { "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js", "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/" } }
+    </script>
+    <script>
+    tailwind.config = { theme: { extend: { fontFamily: { headline: ['"Hanken Grotesk"','sans-serif'], sans: ['Inter','sans-serif'] } } } }
+    </script>
+    <style>
+        body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+        .scrollbar-hide::-webkit-scrollbar{display:none}.scrollbar-hide{-ms-overflow-style:none;scrollbar-width:none}
+        .reveal{opacity:0;transform:translateY(28px);transition:all .9s cubic-bezier(.16,1,.3,1)}.reveal.active{opacity:1;transform:translateY(0)}
+        .delay-100{transition-delay:100ms}.delay-200{transition-delay:200ms}.delay-300{transition-delay:300ms}.delay-400{transition-delay:400ms}.delay-500{transition-delay:500ms}
+        #scroll-progress{transform-origin:left;transform:scaleX(0);transition:transform 60ms linear}
+        #loader{transition:opacity .8s,visibility .8s}#loader.hidden{opacity:0;visibility:hidden}
+        .stat-number{font-variant-numeric:tabular-nums}
+        .nav-solid{background:rgba(255,255,255,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 3px rgba(0,0,0,.06)}
+        .service-card{transition:all .4s ease}.service-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(46,49,146,.08);border-color:rgba(46,49,146,.22)!important}
+        .gold-line{height:2px;background:linear-gradient(90deg,transparent,#D4AF37,transparent)}
+        #map-canvas{transition:opacity .6s ease}
+        @keyframes bounce-slow{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}.bounce-slow{animation:bounce-slow 2s ease-in-out infinite}
+        @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(300%)}}
+    </style>
+</head>
+<body class="bg-white text-[#111827] font-sans overflow-x-hidden scrollbar-hide">
+
+<!-- Loader -->
+<div id="loader" class="fixed inset-0 z-[100] bg-white flex items-center justify-center">
+    <div class="text-center">
+        <div class="w-12 h-12 bg-[#2E3192] rounded-xl flex items-center justify-center mx-auto mb-5 shadow-lg shadow-[#2E3192]/15">
+            <span class="text-lg font-headline font-bold text-[#D4AF37]">CB</span>
+        </div>
+        <p class="text-[10px] uppercase tracking-[.25em] text-[#9CA3AF] mb-4">Loading</p>
+        <div class="w-36 h-1 bg-[#F3F4F6] rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-[#2E3192] to-[#D4AF37] rounded-full" style="animation:loadbar 1.3s ease-in-out infinite"></div></div>
+    </div>
+</div>
+
+<!-- Scroll Progress -->
+<div class="fixed top-0 left-0 w-full h-[3px] z-[60]"><div id="scroll-progress" class="h-full bg-gradient-to-r from-[#2E3192] via-[#D4AF37] to-[#2E3192]"></div></div>
+
+<!-- Nav -->
+<nav id="main-nav" class="fixed top-0 left-0 w-full z-50 transition-all duration-400" style="opacity:0;transform:translateY(-16px)">
+    <div class="flex items-center justify-between px-6 md:px-12 py-4">
+        <a href="#hero" class="flex items-center gap-3">
+            <div class="w-9 h-9 bg-[#2E3192] rounded-lg flex items-center justify-center"><span class="text-xs font-headline font-bold text-[#D4AF37]">CB</span></div>
+            <span class="text-sm font-headline font-semibold text-[#111827] hidden sm:inline">CWALKER BROOKS</span>
+        </a>
+        <div class="hidden md:flex items-center gap-7">
+            <a href="#origin" class="text-[11px] uppercase tracking-[.14em] text-[#6B7280] hover:text-[#2E3192] transition-colors font-medium">Story</a>
+            <a href="#impact" class="text-[11px] uppercase tracking-[.14em] text-[#6B7280] hover:text-[#2E3192] transition-colors font-medium">Impact</a>
+            <a href="#major-projects" class="text-[11px] uppercase tracking-[.14em] text-[#6B7280] hover:text-[#2E3192] transition-colors font-medium">Experience</a>
+            <a href="#services" class="text-[11px] uppercase tracking-[.14em] text-[#6B7280] hover:text-[#2E3192] transition-colors font-medium">Services</a>
+            <a href="#team" class="text-[11px] uppercase tracking-[.14em] text-[#6B7280] hover:text-[#2E3192] transition-colors font-medium">Team</a>
+            <a href="#vision" class="text-[11px] uppercase tracking-[.14em] text-[#6B7280] hover:text-[#2E3192] transition-colors font-medium">Vision</a>
+        </div>
+        <a href="https://cwalkerbrooks.com/about-us/" target="_blank" class="text-[11px] uppercase tracking-[.14em] px-5 py-2.5 bg-[#2E3192] text-white hover:bg-[#3D40B0] transition-colors rounded-lg font-headline font-semibold shadow-sm shadow-[#2E3192]/15">About Us</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="h-screen flex items-center justify-center relative px-6 bg-gradient-to-b from-[#F7F8FC] to-white">
+    <div class="text-center max-w-4xl mx-auto">
+        <div class="w-16 h-16 bg-[#2E3192] rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-xl shadow-[#2E3192]/15 reveal" style="transition-delay:.5s">
+            <span class="text-2xl font-headline font-bold text-[#D4AF37]">CB</span>
+        </div>
+        <p class="text-[11px] uppercase tracking-[.28em] text-[#D4AF37] font-headline font-semibold mb-5 reveal" style="transition-delay:.6s">Company Profile</p>
+        <h1 class="font-headline text-5xl md:text-7xl lg:text-[5.2rem] font-bold leading-[.93] tracking-tight text-[#111827] mb-7 reveal" style="transition-delay:.75s">
+            CWALKER BROOKS<br><span class="text-[#D4AF37]">&</span> Associates
+        </h1>
+        <p class="text-lg md:text-xl font-light text-[#6B7280] max-w-2xl mx-auto leading-relaxed reveal" style="transition-delay:.9s">
+            Civil and structural engineering, construction, and project management—turning ambitious ideas into safe, practical, buildable solutions.
+        </p>
+        <div class="mt-14 reveal" style="transition-delay:1.1s">
+            <a href="#origin" class="inline-flex items-center gap-2 text-[11px] uppercase tracking-[.14em] text-[#9CA3AF] hover:text-[#2E3192] transition-colors font-medium bounce-slow">
+                <span>Begin the Journey</span><span class="iconify" data-icon="lucide:arrow-down" data-width="14"></span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ORIGIN -->
+<section id="origin" class="min-h-screen flex items-center justify-center px-6 py-24 bg-white">
+    <div class="bg-[#F7F8FC] rounded-2xl p-8 md:p-14 max-w-4xl mx-auto border border-[#E5E7EB]">
+        <p class="text-[11px] uppercase tracking-[.28em] text-[#D4AF37] font-headline font-semibold mb-5 reveal">Chapter One</p>
+        <h2 class="font-headline text-3xl md:text-5xl font-bold leading-[.93] tracking-tight text-[#111827] mb-8 reveal delay-100">
+            Founded With <span class="text-[#D4AF37]">Purpose</span>
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+            <div class="reveal delay-200">
+                <!-- Update with content from https://cwalkerbrooks.com/about-us/ -->
+                <p class="text-[15px] font-light text-[#4B5563] leading-relaxed mb-5">
+                    C. Walker-Brooks & Associates Services Limited brings together decades of academic training and hands-on experience in construction, civil and structural engineering, and development project management.
+                </p>
+                <p class="text-[15px] font-light text-[#4B5563] leading-relaxed">
+                    The company's directors have contributed to local and international infrastructure projects—including bridges, roads, railways, airports, post-harvest facilities, and modern and historic monuments. The business was rebranded in 2022 to unite this experience in support of regional and international development.
+                </p>
+            </div>
+            <div class="reveal delay-300">
+                <blockquote class="border-l-4 border-[#D4AF37] pl-6 mb-5">
+                    <p class="font-headline text-lg font-semibold text-[#111827] leading-relaxed">
+                        "Experienced professionals working to complete every project efficiently, safely, and to the highest standards."
+                    </p>
+                </blockquote>
+                <p class="text-sm text-[#9CA3AF] font-medium">— Our Commitment</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- IMPACT SECTION HEADER -->
+<section class="bg-white px-6 md:px-12 pt-28 pb-10 text-center border-t border-[#F3F4F6]">
+    <p class="text-[11px] uppercase tracking-[.28em] text-[#D4AF37] font-headline font-semibold mb-4 reveal">Chapter Two</p>
+    <h2 class="font-headline text-3xl md:text-5xl font-bold leading-[.93] tracking-tight text-[#111827] mb-4 reveal delay-100">
+        Jamaica-Based. <span class="text-[#D4AF37]">Globally Experienced.</span>
+    </h2>
+    <p class="text-[15px] font-light text-[#6B7280] max-w-lg mx-auto leading-relaxed mb-8 reveal delay-200">
+        Explore a Jamaican company shaped by experience on complex local and international infrastructure and development projects.
+    </p>
+    <div class="flex items-center justify-center gap-3 text-[#B0B3C0] reveal delay-300">
+        <div class="w-8 h-px bg-[#D1D5DB]"></div>
+        <span class="text-[10px] uppercase tracking-[.25em] font-medium">Scroll to Explore</span>
+        <span class="iconify bounce-slow" data-icon="lucide:chevrons-down" data-width="16"></span>
+        <div class="w-8 h-px bg-[#D1D5DB]"></div>
+    </div>
+</section>
+
+<!-- IMPACT MAP (3D Sticky Scroll) -->
+<section id="impact" class="relative bg-gradient-to-b from-white via-[#F7F8FC] to-white" style="min-height:300vh">
+    <div class="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+        <!-- 3D Canvas -->
+        <canvas id="map-canvas" class="absolute inset-0 w-full h-full" style="z-index:1"></canvas>
+        <!-- Fallback (shown if Three.js fails) -->
+        <div id="map-fallback" class="hidden absolute inset-0 flex items-center justify-center" style="z-index:0">
+            <div class="text-center p-8"><span class="iconify text-[#D1D5DB] mb-3" data-icon="lucide:map" data-width="48"></span><p class="text-sm text-[#9CA3AF]">Loading 3D map…</p></div>
+        </div>
+        <!-- Left Panel -->
+        <div class="absolute left-4 md:left-8 lg:left-12 top-1/2 -translate-y-1/2 z-10 max-w-[170px] md:max-w-[210px] hidden md:block">
+            <div class="bg-white/85 backdrop-blur-md rounded-xl p-5 border border-[#E5E7EB] shadow-lg shadow-black/[.04]">
+                <p class="text-[9px] uppercase tracking-[.22em] text-[#D4AF37] font-headline font-semibold mb-2">Parishes Reached</p>
+                <div class="flex items-baseline gap-1">
+                    <span class="text-3xl font-headline font-bold text-[#2E3192] stat-number" id="parish-count">0</span>
+                    <span class="text-sm text-[#9CA3AF] font-medium">/ 14</span>
+                </div>
+                <div class="w-full h-1.5 bg-[#F3F4F6] rounded-full overflow-hidden mt-3">
+                    <div id="parish-bar" class="h-full bg-gradient-to-r from-[#2E3192] to-[#D4AF37] rounded-full transition-all duration-300" style="width:0%"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Right Panel -->
+        <div class="absolute right-4 md:right-8 lg:right-12 top-1/2 -translate-y-1/2 z-10 max-w-[170px] md:max-w-[210px] hidden md:block">
+            <div class="bg-white/85 backdrop-blur-md rounded-xl p-5 border border-[#E5E7EB] shadow-lg shadow-black/[.04] transition-all duration-500" id="parish-info-card" style="opacity:0">
+                <p class="text-[9px] uppercase tracking-[.22em] text-[#9CA3AF] font-medium mb-2">Now Reaching</p>
+                <p class="text-xl font-headline font-bold text-[#2E3192] leading-tight" id="node-name">—</p>
+                <p class="text-xs text-[#6B7280] mt-2 leading-relaxed" id="node-desc"></p>
+                <div class="mt-3 flex items-center justify-end gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-[#D4AF37]"></span>
+                    <span class="text-[9px] uppercase tracking-[.14em] text-[#D4AF37] font-semibold">Active</span>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Bar -->
+        <div class="absolute bottom-5 left-1/2 -translate-x-1/2 z-10 md:hidden">
+            <div class="bg-white/90 backdrop-blur-md rounded-xl px-5 py-3 border border-[#E5E7EB] shadow-lg shadow-black/[.04] flex items-center gap-4">
+                <div><p class="text-[8px] uppercase tracking-[.18em] text-[#9CA3AF] font-medium">Parishes</p><p class="text-lg font-headline font-bold text-[#2E3192]"><span id="parish-count-m">0</span><span class="text-xs text-[#9CA3AF]">/14</span></p></div>
+                <div class="w-px h-7 bg-[#E5E7EB]"></div>
+                <div><p class="text-[8px] uppercase tracking-[.18em] text-[#9CA3AF] font-medium">Latest</p><p class="text-sm font-headline font-semibold text-[#2E3192]" id="node-name-m">—</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="h-16 bg-gradient-to-b from-[#F7F8FC] to-white"></div>
+
+<!-- MAJOR PROJECT EXPERIENCE -->
+<section id="major-projects" class="bg-[#111827] px-6 md:px-12 py-24 md:py-32 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-[1fr_auto] gap-10 items-end mb-14">
+            <div class="max-w-3xl">
+                <p class="text-[11px] uppercase tracking-[.28em] text-[#D4AF37] font-headline font-semibold mb-5 reveal">Collective Major-Project Experience</p>
+                <h2 class="font-headline text-3xl md:text-5xl font-bold leading-[.96] tracking-tight text-white mb-6 reveal delay-100">Experience Contributing to Jamaica's <span class="text-[#D4AF37]">Major Developments</span></h2>
+                <p class="text-[15px] md:text-base font-light text-[#C7CBD4] leading-relaxed reveal delay-200">Members of our team have contributed professional engineering, construction and project-management expertise to significant public infrastructure and residential developments across Jamaica.</p>
+            </div>
+            <div class="reveal delay-300 lg:text-right">
+                <p class="font-headline text-5xl md:text-7xl font-bold text-[#D4AF37] leading-none">J$15B</p>
+                <p class="text-[10px] uppercase tracking-[.2em] text-[#9CA3AF] mt-3 max-w-[250px] lg:ml-auto">Approximate combined value of developments to which team members have contributed</p>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5">
+            <article class="group reveal delay-100 bg-white/[.04] border border-white/10 rounded-2xl overflow-hidden">
+                <div class="aspect-[4/3] overflow-hidden"><img src="assets/norman-manley-airport.jpg" alt="Norman Manley International Airport" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                <div class="p-6">
+                    <p class="text-[9px] uppercase tracking-[.2em] text-[#D4AF37] font-semibold mb-2">Aviation Infrastructure</p>
+                    <h3 class="font-headline text-xl font-bold text-white mb-3">Norman Manley International Airport</h3>
+                    <p class="text-sm font-light text-[#9CA3AF] leading-relaxed">Team-member experience contributing to works associated with the airport's arrivals section.</p>
+                </div>
+            </article>
+            <article class="group reveal delay-200 bg-white/[.04] border border-white/10 rounded-2xl overflow-hidden">
+                <div class="aspect-[4/3] overflow-hidden"><img src="assets/north-south-highway.jpg" alt="North–South Highway in Jamaica" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                <div class="p-6">
+                    <p class="text-[9px] uppercase tracking-[.2em] text-[#D4AF37] font-semibold mb-2">Road Infrastructure</p>
+                    <h3 class="font-headline text-xl font-bold text-white mb-3">North–South Highway — Segment 3</h3>
+                    <p class="text-sm font-light text-[#9CA3AF] leading-relaxed">Team-member experience contributing to a major segment of Jamaica's national highway infrastructure.</p>
+                </div>
+            </article>
+            <article class="group reveal delay-300 bg-white/[.04] border border-white/10 rounded-2xl overflow-hidden">
+                <div class="aspect-[4/3] overflow-hidden"><img src="assets/bus-park.jpg" alt="Public transportation bus park in Jamaica" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                <div class="p-6">
+                    <p class="text-[9px] uppercase tracking-[.2em] text-[#D4AF37] font-semibold mb-2">Public Transportation</p>
+                    <h3 class="font-headline text-xl font-bold text-white mb-3">Major Bus Park Development</h3>
+                    <p class="text-sm font-light text-[#9CA3AF] leading-relaxed">Team-member experience contributing to the delivery of a major public transportation facility in Jamaica.</p>
+                </div>
+            </article>
+        </div>
+
+        <div class="mt-10 grid md:grid-cols-[auto_1fr] gap-5 items-start border-t border-white/10 pt-8 reveal delay-200">
+            <p class="text-[10px] uppercase tracking-[.2em] text-[#D4AF37] font-semibold">Additional Experience</p>
+            <p class="text-sm font-light text-[#9CA3AF] leading-relaxed">The team's broader experience includes several National Housing Trust scheme developments and local and international infrastructure involving roads, bridges, railways, airports, public facilities and civil works. Project references describe the collective experience of individual team members and should not be interpreted as projects contracted exclusively through the present company.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="bg-white px-6 md:px-12 py-24 md:py-32">
+    <div class="max-w-7xl mx-auto">
+        <div class="max-w-2xl mb-14">
+            <p class="text-[11px] uppercase tracking-[.28em] text-[#D4AF37] font-headline font-semibold mb-5 reveal">Chapter Three</p>
+            <h2 class="font-headline text-3xl md:text-5xl font-bold leading-[.93] tracking-tight text-[#111827] mb-5 reveal delay-100">What We <span class="text-[#D4AF37]">Deliver</span></h2>
+            <p class="text-[15px] font-light text-[#6B7280] leading-relaxed reveal delay-200">A comprehensive suite of professional services underpinned by deep sector expertise.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="reveal delay-100 service-card p-6 border border-[#E5E7EB] rounded-xl bg-white">
+                <div class="w-10 h-10 rounded-lg bg-[#2E3192]/[.06] flex items-center justify-center mb-4"><span class="iconify text-[#2E3192]" data-icon="lucide:shield-check" data-width="18"></span></div>
+                <h3 class="text-[15px] font-headline font-semibold text-[#111827] mb-2">Project Management</h3>
+                <p class="text-sm font-light text-[#6B7280] leading-relaxed">Planning, organising, and executing projects from start to finish while managing budget, time, quality, and client expectations.</p>
+            </div>
+            <div class="reveal delay-200 service-card p-6 border border-[#E5E7EB] rounded-xl bg-white">
+                <div class="w-10 h-10 rounded-lg bg-[#2E3192]/[.06] flex items-center justify-center mb-4"><span class="iconify text-[#2E3192]" data-icon="lucide:calculator" data-width="18"></span></div>
+                <h3 class="text-[15px] font-headline font-semibold text-[#111827] mb-2">Architectural & 3D Drawings</h3>
+                <p class="text-sm font-light text-[#6B7280] leading-relaxed">Detailed architectural drawings and 3D visualisations that help clients understand, refine, and plan their spaces before construction begins.</p>
+            </div>
+            <div class="reveal delay-300 service-card p-6 border border-[#E5E7EB] rounded-xl bg-white">
+                <div class="w-10 h-10 rounded-lg bg-[#2E3192]/[.06] flex items-center justify-center mb-4"><span class="iconify text-[#2E3192]" data-icon="lucide:lightbulb" data-width="18"></span></div>
+                <h3 class="text-[15px] font-headline font-semibold text-[#111827] mb-2">Structural Engineering</h3>
+                <p class="text-sm font-light text-[#6B7280] leading-relaxed">Engineering reports, structural designs, drawings, and detailing developed for safety, stability, and applicable codes and regulations.</p>
+            </div>
+            <div class="reveal delay-100 service-card p-6 border border-[#E5E7EB] rounded-xl bg-white">
+                <div class="w-10 h-10 rounded-lg bg-[#2E3192]/[.06] flex items-center justify-center mb-4"><span class="iconify text-[#2E3192]" data-icon="lucide:trending-up" data-width="18"></span></div>
+                <h3 class="text-[15px] font-headline font-semibold text-[#111827] mb-2">Building Quantities</h3>
+                <p class="text-sm font-light text-[#6B7280] leading-relaxed">Accurate building quantity surveys and cost estimates that support informed decisions and stronger budget control.</p>
+            </div>
+            <div class="reveal delay-200 service-card p-6 border border-[#E5E7EB] rounded-xl bg-white">
+                <div class="w-10 h-10 rounded-lg bg-[#2E3192]/[.06] flex items-center justify-center mb-4"><span class="iconify text-[#2E3192]" data-icon="lucide:building-2" data-width="18"></span></div>
+                <h3 class="text-[15px] font-headline font-semibold text-[#111827] mb-2">Construction & Civil Works</h3>
+                <p class="text-sm font-light text-[#6B7280] leading-relaxed">General construction and civil engineering works, including surveying, site planning, roads, and water-supply systems.</p>
+            </div>
+            <div class="reveal delay-300 service-card p-6 border border-[#E5E7EB] rounded-xl bg-white">
+                <div class="w-10 h-10 rounded-lg bg-[#2E3192]/[.06] flex items-center justify-center mb-4"><span class="iconify text-[#2E3192]" data-icon="lucide:alert-triangle" data-width="18"></span></div>
+                <h3 class="text-[15px] font-headline font-semibold text-[#111827] mb-2">Electrical, Maintenance & Water Solutions</h3>
+                <p class="text-sm font-light text-[#6B7280] leading-relaxed">Electrical contracting, rainwater harvesting, HVAC, plumbing, electrical maintenance, repairs, and general property upkeep.</p>
+            </div>
+        </div>
+        <div class="mt-6 reveal delay-300 p-6 md:p-7 rounded-xl bg-[#F7F8FC] border border-[#E5E7EB] flex flex-col md:flex-row md:items-center gap-5">
+            <div class="w-12 h-12 shrink-0 rounded-xl bg-[#2E3192] flex items-center justify-center"><span class="iconify text-[#D4AF37]" data-icon="lucide:printer" data-width="22"></span></div>
+            <div>
+                <h3 class="text-[15px] font-headline font-semibold text-[#111827] mb-1.5">Supporting Capability: In-House Plan Printing</h3>
+                <p class="text-sm font-light text-[#6B7280] leading-relaxed">In-house large-format printing of architectural drawings, engineering plans and construction documents supports faster revisions, stronger document control and timely delivery of site-ready drawing sets.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TEAM -->
+<section id="team" class="bg-[#F7F8FC] px-6 md:px-12 py-24 md:py-32 border-t border-[#F0F1F5]">
+    <div class="max-w-7xl mx-auto">
+        <div class="max-w-2xl mb-14">
+            <p class="text-[11px] uppercase tracking-[.28em] text-[#D4AF37] font-headline font-semibold mb-5 reveal">Chapter Four</p>
+            <h2 class="font-headline text-3xl md:text-5xl font-bold leading-[.93] tracking-tight text-[#111827] mb-5 reveal delay-100">The People Behind the <span class="text-[#D4AF37]">Impact</span></h2>
+            <p class="text-[15px] font-light text-[#6B7280] leading-relaxed reveal delay-200">Our greatest asset—professionals combining technical rigour with genuine care.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="reveal delay-100 group bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-sm hover:shadow-xl hover:shadow-[#2E3192]/[.06] transition-all duration-500">
+                <div class="relative overflow-hidden aspect-[3/4]"><img src="https://cwalkerbrooks.com/wp-content/uploads/2023/10/admin-ajax.jpg" alt="Oswin O. Brooks" class="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"><div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div><div class="absolute bottom-0 left-0 right-0 p-5"><h3 class="text-lg font-headline font-bold text-white">Oswin O. Brooks</h3><p class="text-[10px] uppercase tracking-[.18em] text-[#D4AF37] font-semibold mt-1">Managing Director</p></div></div>
+                <div class="p-5"><p class="text-sm font-light text-[#6B7280] leading-relaxed">Leads the company's multidisciplinary engineering, construction, and project-management practice.</p></div>
+            </div>
+            <div class="reveal delay-200 group bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-sm hover:shadow-xl hover:shadow-[#2E3192]/[.06] transition-all duration-500">
+                <div class="relative overflow-hidden aspect-[3/4] bg-gradient-to-br from-[#2E3192] via-[#252879] to-[#111827] flex items-center justify-center"><div class="w-28 h-28 rounded-full border border-[#D4AF37]/50 bg-white/5 flex items-center justify-center shadow-2xl"><span class="font-headline text-4xl font-bold text-[#D4AF37]">MP</span></div><div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div><div class="absolute bottom-0 left-0 right-0 p-5"><h3 class="text-lg font-headline font-bold text-white">Marcia Phillips</h3><p class="text-[10px] uppercase tracking-[.18em] text-[#D4AF37] font-semibold mt-1">Director / Company Secretary</p></div></div>
+                <div class="p-5"><p class="text-sm font-light text-[#6B7280] leading-relaxed">Supports the company's leadership, administration, and corporate governance responsibilities.</p></div>
+            </div>
+            <div class="reveal delay-300 group bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-sm hover:shadow-xl hover:shadow-[#2E3192]/[.06] transition-all duration-500">
+                <div class="relative overflow-hidden aspect-[3/4]"><img src="https://cwalkerbrooks.com/wp-content/uploads/2024/01/Pasport-picture.jpg" alt="Yasmin Mathews" class="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"><div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div><div class="absolute bottom-0 left-0 right-0 p-5"><h3 class="text-lg font-headline font-bold text-white">Yasmin Mathews</h3><p class="text-[10px] uppercase tracking-[.18em] text-[#D4AF37] font-semibold mt-1">Director</p></div></div>
+                <div class="p-5"><p class="text-sm font-light text-[#6B7280] leading-relaxed">Contributes to the company's strategic direction and delivery of professional project services.</p></div>
+            </div>
+            <div class="reveal delay-100 group bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-sm hover:shadow-xl hover:shadow-[#2E3192]/[.06] transition-all duration-500">
+                <div class="relative overflow-hidden aspect-[3/4]"><img src="https://cwalkerbrooks.com/wp-content/uploads/2024/12/Casey-1014x1024.jpg" alt="Casey-Ann Brooks" class="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"><div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div><div class="absolute bottom-0 left-0 right-0 p-5"><h3 class="text-lg font-headline font-bold text-white">Casey-Ann Brooks</h3><p class="text-[10px] uppercase tracking-[.18em] text-[#D4AF37] font-semibold mt-1">Director</p></div></div>
+                <div class="p-5"><p class="text-sm font-light text-[#6B7280] leading-relaxed">Supports the organisation's leadership and its commitment to reliable, high-quality project delivery.</p></div>
+            </div>
+            <div class="reveal delay-200 group bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-sm hover:shadow-xl hover:shadow-[#2E3192]/[.06] transition-all duration-500">
+                <div class="relative overflow-hidden aspect-[3/4]"><img src="https://cwalkerbrooks.com/wp-content/uploads/2024/12/Kelly-Ann-1014x1024.jpg" alt="Kelly-Ann Brooks" class="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"><div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div><div class="absolute bottom-0 left-0 right-0 p-5"><h3 class="text-lg font-headline font-bold text-white">Kelly-Ann Brooks</h3><p class="text-[10px] uppercase tracking-[.18em] text-[#D4AF37] font-semibold mt-1">Director</p></div></div>
+                <div class="p-5"><p class="text-sm font-light text-[#6B7280] leading-relaxed">Helps guide the company's growth and multidisciplinary service offering.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STATS -->
+<section class="bg-white px-6 md:px-12 py-24 md:py-32">
+    <div class="max-w-7xl mx-auto"><div class="gold-line mb-14"></div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+            <div class="reveal delay-100 text-center md:text-left"><p class="text-4xl md:text-5xl font-headline font-bold text-[#2E3192] stat-number mb-2" data-target="25" data-suffix="+">0</p><p class="text-[11px] uppercase tracking-[.14em] text-[#9CA3AF] font-medium">Years of Combined Experience</p></div>
+            <div class="reveal delay-200 text-center md:text-left"><p class="text-4xl md:text-5xl font-headline font-bold text-[#2E3192] stat-number mb-2" data-target="10" data-suffix="+">0</p><p class="text-[11px] uppercase tracking-[.14em] text-[#9CA3AF] font-medium">Core Service Areas</p></div>
+            <div class="reveal delay-300 text-center md:text-left"><p class="text-4xl md:text-5xl font-headline font-bold text-[#2E3192] stat-number mb-2" data-target="3">0</p><p class="text-[11px] uppercase tracking-[.14em] text-[#9CA3AF] font-medium">Primary Disciplines</p></div>
+            <div class="reveal delay-400 text-center md:text-left"><p class="text-4xl md:text-5xl font-headline font-bold text-[#2E3192] stat-number mb-2" data-target="2022">0</p><p class="text-[11px] uppercase tracking-[.14em] text-[#9CA3AF] font-medium">Company Rebrand</p></div>
+        </div>
+    <div class="gold-line mt-14"></div></div>
+</section>
+
+<!-- VISION -->
+<section id="vision" class="bg-[#F7F8FC] px-6 md:px-12 py-24 md:py-32 border-t border-[#F0F1F5]">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div>
+                <p class="text-[11px] uppercase tracking-[.28em] text-[#D4AF37] font-headline font-semibold mb-5 reveal">The Road Ahead</p>
+                <h2 class="font-headline text-3xl md:text-5xl font-bold leading-[.93] tracking-tight text-[#111827] mb-7 reveal delay-100">Building Jamaica's Future, <span class="text-[#D4AF37]">Together</span></h2>
+                <p class="text-[15px] font-light text-[#6B7280] leading-relaxed mb-5 reveal delay-200">C. Walker-Brooks & Associates helps clients move from concept to completion through coordinated design, engineering, construction, and project-management expertise.</p>
+                <p class="text-[15px] font-light text-[#6B7280] leading-relaxed mb-9 reveal delay-300">Our focus is practical: deliver projects efficiently, safely, within budget, and to a standard clients can trust.</p>
+                <div class="flex flex-wrap gap-4 reveal delay-400">
+                    <a href="https://cwalkerbrooks.com/" target="_blank" class="inline-flex items-center gap-2 px-7 py-3.5 bg-[#D4AF37] text-[#111827] text-[11px] uppercase tracking-[.14em] font-headline font-bold hover:bg-[#E2C24E] transition-colors rounded-lg shadow-lg shadow-[#D4AF37]/20">Visit Website<span class="iconify" data-icon="lucide:arrow-up-right" data-width="14"></span></a>
+                    <a href="mailto:cwalkerbrooks@gmail.com" class="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-[#2E3192] text-[#2E3192] text-[11px] uppercase tracking-[.14em] font-headline font-semibold hover:bg-[#2E3192] hover:text-white transition-all rounded-lg">Get in Touch</a>
+                </div>
+            </div>
+            <div class="reveal delay-300">
+                <div class="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-2xl shadow-[#2E3192]/[.08]">
+                    <img src="https://picsum.photos/seed/cwb-future-v3/800/1000.jpg" alt="Jamaica's future" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#2E3192]/80 via-[#2E3192]/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-7">
+                        <div class="w-10 h-10 bg-[#D4AF37] rounded-lg flex items-center justify-center mb-4 shadow-lg shadow-[#D4AF37]/30"><span class="iconify text-[#111827]" data-icon="lucide:quote" data-width="18"></span></div>
+                        <p class="font-headline text-lg font-semibold text-white leading-relaxed">From early planning and visualisation to engineering, construction, and maintenance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#111827] px-6 md:px-12 py-14">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-10 mb-12">
+            <div>
+                <div class="flex items-center gap-3 mb-5"><div class="w-9 h-9 bg-[#2E3192] rounded-lg flex items-center justify-center"><span class="text-xs font-headline font-bold text-[#D4AF37]">CB</span></div><span class="text-sm font-headline font-semibold text-white">CWALKER BROOKS & Associates</span></div>
+                <p class="text-sm font-light text-[#9CA3AF] leading-relaxed">Civil/structural engineering, construction, and project-management expertise.</p>
+            </div>
+            <div>
+                <h4 class="text-[11px] uppercase tracking-[.14em] text-[#D4AF37] font-headline font-semibold mb-4">Connect</h4>
+                <div class="space-y-2.5">
+                    <a href="https://cwalkerbrooks.com/" target="_blank" class="flex items-center gap-2 text-sm text-[#9CA3AF] hover:text-[#D4AF37] transition-colors"><span class="iconify" data-icon="lucide:globe" data-width="13"></span>cwalkerbrooks.com</a>
+                    <a href="https://cwalkerbrooks.com/about-us/" target="_blank" class="flex items-center gap-2 text-sm text-[#9CA3AF] hover:text-[#D4AF37] transition-colors"><span class="iconify" data-icon="lucide:info" data-width="13"></span>About Us</a>
+                    <a href="mailto:cwalkerbrooks@gmail.com" class="flex items-center gap-2 text-sm text-[#9CA3AF] hover:text-[#D4AF37] transition-colors"><span class="iconify" data-icon="lucide:mail" data-width="13"></span>cwalkerbrooks@gmail.com</a>
+                    <a href="tel:+18769093407" class="flex items-center gap-2 text-sm text-[#9CA3AF] hover:text-[#D4AF37] transition-colors"><span class="iconify" data-icon="lucide:phone" data-width="13"></span>876-909-3407</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-[11px] uppercase tracking-[.14em] text-[#D4AF37] font-headline font-semibold mb-4">Navigate</h4>
+                <div class="grid grid-cols-2 gap-2">
+                    <a href="#origin" class="text-sm text-[#9CA3AF] hover:text-white transition-colors">Story</a>
+                    <a href="#impact" class="text-sm text-[#9CA3AF] hover:text-white transition-colors">Impact</a>
+                    <a href="#major-projects" class="text-sm text-[#9CA3AF] hover:text-white transition-colors">Experience</a>
+                    <a href="#services" class="text-sm text-[#9CA3AF] hover:text-white transition-colors">Services</a>
+                    <a href="#team" class="text-sm text-[#9CA3AF] hover:text-white transition-colors">Team</a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-7 flex flex-col md:flex-row justify-between items-center gap-3">
+            <p class="text-xs text-[#6B7280]">© 2026 C. Walker-Brooks & Associates Services Limited. All rights reserved.</p>
+            <p class="text-xs text-[#4B5563]">Company Profile — Confidential</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ===== THREE.JS 3D JAMAICA MAP ===== -->
+<script type="module">
+import * as THREE from 'three';
+
+/* ── SVG Path Parser (extended with cubic bezier support) ── */
+function parseSVGPath(d) {
+    const points = [];
+    const commands = d.match(/[MmLlCcZz][^MmLlCcZz]*/gi);
+    if (!commands) return [points];
+    let cx = 0, cy = 0;
+
+    function sampleCubic(x0,y0,x1,y1,x2,y2,x3,y3,n) {
+        const pts = [];
+        for (let i = 1; i <= n; i++) {
+            const t = i/n, m = 1-t;
+            pts.push(new THREE.Vector2(
+                m*m*m*x0 + 3*m*m*t*x1 + 3*m*t*t*x2 + t*t*t*x3,
+                -(m*m*m*y0 + 3*m*m*t*y1 + 3*m*t*t*y2 + t*t*t*y3)
+            ));
+        }
+        return pts;
+    }
+
+    for (let cmd of commands) {
+        const type = cmd[0];
+        const nums = cmd.slice(1).trim().split(/[\s,]+/).filter(n=>n).map(Number);
+
+        if (type === 'M') { cx=nums[0]; cy=nums[1]; points.push(new THREE.Vector2(cx,-cy)); }
+        else if (type === 'L') { cx=nums[0]; cy=nums[1]; points.push(new THREE.Vector2(cx,-cy)); }
+        else if (type === 'l') { for(let i=0;i<nums.length;i+=2){cx+=nums[i];cy+=nums[i+1];points.push(new THREE.Vector2(cx,-cy));} }
+        else if (type === 'C') {
+            for(let i=0;i<nums.length;i+=6){
+                points.push(...sampleCubic(cx,cy,nums[i],nums[i+1],nums[i+2],nums[i+3],nums[i+4],nums[i+5],12));
+                cx=nums[i+4]; cy=nums[i+5];
+            }
+        }
+        else if (type === 'z' || type === 'Z') break;
+    }
+    return [points];
+}
+
+/* ── Accurate Jamaica parish geometry ── */
+const MAP_DATA_URL = 'https://code.highcharts.com/mapdata/countries/jm/jm-all.geo.json';
+const mapData = await fetch(MAP_DATA_URL).then(r => {
+    if (!r.ok) throw new Error('Jamaica map data could not be loaded');
+    return r.json();
+});
+
+const PARISH_ORDER = [
+    'Kingston','Saint Andrew','Saint Catherine','Saint James','Manchester','Saint Ann','Clarendon',
+    'Saint Elizabeth','Westmoreland','Trelawny','Hanover','Portland','Saint Mary','Saint Thomas'
+];
+const DISPLAY_NAME = name => name.replace(/^Saint /,'St. ');
+const SERVICE_LABELS = [
+    'Project Management','Civil & Structural Engineering','General Construction','Infrastructure Experience',
+    'Building Quantities','Architectural & 3D Drawings','Civil Engineering Works','Construction Services',
+    'Project Delivery','Engineering & Design','Technical Experience','Rainwater Harvesting',
+    'Electrical & Maintenance','Planning Through Completion'
+];
+
+const featureByName = new Map(mapData.features.map(f => [f.properties.name, f]));
+const allCoords = mapData.features.flatMap(f => f.geometry.coordinates.flat());
+const minLon = Math.min(...allCoords.map(p=>p[0])), maxLon = Math.max(...allCoords.map(p=>p[0]));
+const minLat = Math.min(...allCoords.map(p=>p[1])), maxLat = Math.max(...allCoords.map(p=>p[1]));
+const mapCx = (minLon+maxLon)/2, mapCy = (minLat+maxLat)/2;
+
+const CONNECTIONS = [
+    [0,1],[1,2],[2,6],[3,9],[3,10],[4,6],[4,7],
+    [5,12],[5,11],[6,7],[7,8],[8,10],[11,12],[0,13],[5,9],[1,4]
+];
+
+/* ── Config ── */
+const IS_MOBILE = window.innerWidth < 768;
+const EXTRUDE = 0.15;
+const SCALE = (IS_MOBILE ? 5.8 : 8.4) / (maxLon-minLon);
+
+function projectCoord([lon,lat]){
+    return new THREE.Vector2((lon-mapCx)*SCALE,(lat-mapCy)*SCALE);
+}
+
+function polygonCentroid(coords){
+    let area=0,cx=0,cy=0;
+    for(let i=0,j=coords.length-1;i<coords.length;j=i++){
+        const [x0,y0]=coords[j], [x1,y1]=coords[i];
+        const cross=x0*y1-x1*y0;
+        area+=cross; cx+=(x0+x1)*cross; cy+=(y0+y1)*cross;
+    }
+    area*=.5;
+    return Math.abs(area)<1e-9 ? coords[0] : [cx/(6*area),cy/(6*area)];
+}
+
+const PARISHES = PARISH_ORDER.map((sourceName,i)=>{
+    const feature=featureByName.get(sourceName);
+    const outer=feature.geometry.coordinates[0];
+    const [lon,lat]=polygonCentroid(outer);
+    return {name:DISPLAY_NAME(sourceName),lon,lat,feature,desc:SERVICE_LABELS[i]};
+});
+
+/* ── World coord helper ── */
+function toWorld(lon,lat){
+    const p=projectCoord([lon,lat]);
+    return new THREE.Vector3(p.x, EXTRUDE+0.03, -p.y);
+}
+
+/* ── Scene ── */
+const canvas = document.getElementById('map-canvas');
+const fallback = document.getElementById('map-fallback');
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(38, window.innerWidth/window.innerHeight, 0.1, 200);
+camera.position.set(1.5, 8, 7);
+camera.lookAt(0,0,0);
+
+const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.1;
+fallback.classList.add('hidden');
+
+/* ── Lights ── */
+scene.add(new THREE.AmbientLight(0xffffff, 0.7));
+const dir = new THREE.DirectionalLight(0xffffff, 0.9);
+dir.position.set(4,12,6); scene.add(dir);
+const hemi = new THREE.HemisphereLight(0xf0f0ff, 0xe8e0d0, 0.3);
+scene.add(hemi);
+const ptLight = new THREE.PointLight(0xD4AF37, 0, 15);
+ptLight.position.set(0,3,0); scene.add(ptLight);
+
+/* ── Parish meshes form the exact island silhouette ── */
+const mat = new THREE.MeshStandardMaterial({color:0x2E3192, roughness:0.55, metalness:0.08});
+const edgeMat = new THREE.LineBasicMaterial({color:0xD4AF37, transparent:true, opacity:0.42});
+const island = new THREE.Group();
+const edges = new THREE.Group();
+PARISHES.forEach(p=>{
+    const ring=p.feature.geometry.coordinates[0];
+    const shape=new THREE.Shape(ring.map(projectCoord));
+    const geo=new THREE.ExtrudeGeometry(shape,{depth:EXTRUDE,bevelEnabled:true,bevelThickness:0.015,bevelSize:0.012,bevelSegments:2});
+    const mesh=new THREE.Mesh(geo,mat);
+    mesh.rotation.x=-Math.PI/2;
+    island.add(mesh);
+    const outline=new THREE.LineSegments(new THREE.EdgesGeometry(geo,18),edgeMat);
+    outline.rotation.x=-Math.PI/2;
+    edges.add(outline);
+});
+island.position.y = -0.1;
+scene.add(island);
+edges.position.y = -0.1;
+scene.add(edges);
+
+/* ── Glow Texture ── */
+function makeGlowTex(){
+    const s=128, c=document.createElement('canvas');
+    c.width=s;c.height=s;
+    const x=c.getContext('2d'), g=x.createRadialGradient(s/2,s/2,0,s/2,s/2,s/2);
+    g.addColorStop(0,'rgba(212,175,55,1)');g.addColorStop(0.25,'rgba(212,175,55,0.5)');g.addColorStop(0.6,'rgba(212,175,55,0.1)');g.addColorStop(1,'rgba(0,0,0,0)');
+    x.fillStyle=g;x.fillRect(0,0,s,s);
+    return new THREE.CanvasTexture(c);
+}
+const glowTex = makeGlowTex();
+
+/* ── Parish Nodes ── */
+const nodes = [];
+PARISHES.forEach((p,i) => {
+    const g = new THREE.Group();
+    const pos = toWorld(p.lon, p.lat);
+    g.position.copy(pos);
+
+    // Core sphere
+    const sg = new THREE.SphereGeometry(Math.max(0.01,0.05),12,12);
+    const sm = new THREE.MeshBasicMaterial({color:0xD4AF37, transparent:true, opacity:0});
+    g.add(new THREE.Mesh(sg, sm));
+
+    // Glow sprite
+    const spm = new THREE.SpriteMaterial({map:glowTex, color:0xD4AF37, transparent:true, opacity:0, blending:THREE.AdditiveBlending, depthWrite:false});
+    const sp = new THREE.Sprite(spm);
+    sp.scale.set(0.5,0.5,1);
+    g.add(sp);
+
+    // Ring
+    const rg = new THREE.RingGeometry(0.06,0.1,24);
+    const rm = new THREE.MeshBasicMaterial({color:0xD4AF37, transparent:true, opacity:0, side:THREE.DoubleSide, blending:THREE.AdditiveBlending, depthWrite:false});
+    const ring = new THREE.Mesh(rg, rm);
+    ring.rotation.x = -Math.PI/2;
+    g.add(ring);
+
+    g.userData = {op:0, idx:i, phase:Math.random()*Math.PI*2};
+    scene.add(g);
+    nodes.push(g);
+});
+
+/* ── Connection Lines ── */
+const connLines = [];
+CONNECTIONS.forEach(([a,b])=>{
+    const pA=toWorld(PARISHES[a].lon,PARISHES[a].lat);
+    const pB=toWorld(PARISHES[b].lon,PARISHES[b].lat);
+    const bg = new THREE.BufferGeometry().setFromPoints([pA,pB]);
+    const bm = new THREE.LineBasicMaterial({color:0xD4AF37, transparent:true, opacity:0, blending:THREE.AdditiveBlending, depthWrite:false});
+    const line = new THREE.Line(bg, bm);
+    scene.add(line);
+    connLines.push({line, a, b});
+});
+
+/* ── Particles ── */
+const PC = IS_MOBILE?100:250;
+const pPos = new Float32Array(PC*3);
+const pSpd = new Float32Array(PC);
+for(let i=0;i<PC;i++){pPos[i*3]=(Math.random()-.5)*16;pPos[i*3+1]=Math.random()*6;pPos[i*3+2]=(Math.random()-.5)*10;pSpd[i]=.002+Math.random()*.004;}
+const pGeo = new THREE.BufferGeometry();
+pGeo.setAttribute('position',new THREE.BufferAttribute(pPos,3));
+const pMat = new THREE.PointsMaterial({color:0x2E3192, size:IS_MOBILE?.04:.025, transparent:true, opacity:.12, blending:THREE.AdditiveBlending, depthWrite:false});
+scene.add(new THREE.Points(pGeo,pMat));
+
+/* ── Mouse ── */
+let mx=0,my=0;
+document.addEventListener('mousemove',e=>{mx=(e.clientX/window.innerWidth-.5)*2;my=(e.clientY/window.innerHeight-.5)*2;});
+
+/* ── Scroll State ── */
+const impactEl = document.getElementById('impact');
+const parishCountEl = document.getElementById('parish-count');
+const parishCountMEl = document.getElementById('parish-count-m');
+const parishBarEl = document.getElementById('parish-bar');
+const infoCard = document.getElementById('parish-info-card');
+const nameEl = document.getElementById('node-name');
+const descEl = document.getElementById('node-desc');
+const nameMEl = document.getElementById('node-name-m');
+let scrollProg=0, targetProg=0, activatedCount=0, lastAct=-1;
+
+function onScroll(){
+    const end = impactEl.offsetTop+impactEl.offsetHeight-window.innerHeight;
+    targetProg = Math.max(0,Math.min(1,window.scrollY/Math.max(1,end)));
+    const total = document.documentElement.scrollHeight-window.innerHeight;
+    document.getElementById('scroll-progress').style.transform=`scaleX(${window.scrollY/Math.max(1,total)})`;
+    const nav=document.getElementById('main-nav');
+    if(window.scrollY>80){nav.style.opacity='1';nav.style.transform='translateY(0)';nav.classList.add('nav-solid');}
+    else{nav.style.opacity='0';nav.style.transform='translateY(-16px)';nav.classList.remove('nav-solid');}
+}
+window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+/* ── Animate ── */
+const clock = new THREE.Clock();
+function animate(){
+    requestAnimationFrame(animate);
+    const t = clock.getElapsedTime();
+    scrollProg += (targetProg-scrollProg)*.055;
+
+    // Subtle island tilt
+    island.rotation.z = Math.sin(t*.08)*.015;
+    edges.rotation.z = island.rotation.z;
+
+    // Camera
+    const camX = 1.5 + scrollProg*1.5 + mx*.3;
+    const camY = 8 - scrollProg*2.5 + my*-.15;
+    const camZ = 7 - scrollProg*2;
+    camera.position.x += (camX-camera.position.x)*.04;
+    camera.position.y += (camY-camera.position.y)*.04;
+    camera.position.z += (camZ-camera.position.z)*.04;
+    camera.lookAt(0,0,0);
+
+    // Node activation
+    const nStart=.2, nEnd=.72;
+    let target = Math.floor((scrollProg-nStart)/(nEnd-nStart)*14);
+    target = Math.max(0,Math.min(14,target));
+    while(lastAct < target-1){
+        lastAct++;
+        activatedCount = lastAct+1;
+    }
+
+    let activeVis = 0;
+    nodes.forEach((g,i)=>{
+        const tOp = i < activatedCount ? 1 : 0;
+        g.userData.op += (tOp - g.userData.op)*.07;
+        const op = g.userData.op;
+        if(op>.05) activeVis++;
+
+        // Sphere
+        g.children[0].material.opacity = op;
+        const pulse = 1+Math.sin(t*2.5+i*.8)*.2;
+        g.children[0].scale.setScalar(pulse*op);
+
+        // Glow
+        g.children[1].material.opacity = op*.45;
+        const gs = .5+Math.sin(t*1.2+i)*.1;
+        g.children[1].scale.set(gs,gs,1);
+
+        // Ring
+        const rOp = op*(.4+Math.sin(t*1.8+g.userData.phase)*.25);
+        g.children[2].material.opacity = Math.max(0,rOp);
+        const rScale = 1+(Math.sin(t*1.0+g.userData.phase)*.5+.5)*2.5;
+        g.children[2].scale.setScalar(rScale);
+    });
+
+    ptLight.intensity = activeVis*.25;
+
+    // Connections
+    connLines.forEach(({line,a,b})=>{
+        const oA = nodes[a].userData.op, oB = nodes[b].userData.op;
+        const tOp = Math.min(oA,oB)*.2;
+        line.material.opacity += (tOp-line.material.opacity)*.07;
+    });
+
+    // Particles
+    const pa = particles.geometry.attributes.position.array;
+    // (handled below outside try-catch)
+
+    // DOM updates
+    parishCountEl.textContent = activatedCount;
+    parishCountMEl.textContent = activatedCount;
+    parishBarEl.style.width = (activatedCount/14*100)+'%';
+
+    if(scrollProg>.24 && scrollProg<.82 && lastAct>=0){
+        infoCard.style.opacity='1';
+        nameEl.textContent=PARISHES[lastAct].name;
+        descEl.textContent=PARISHES[lastAct].desc;
+        nameMEl.textContent=PARISHES[lastAct].name;
+    } else {
+        infoCard.style.opacity='0';
+        nameMEl.textContent='—';
+    }
+
+    renderer.render(scene,camera);
+}
+
+// Particle update (separate to avoid scope issues)
+const particles = scene.children.find(c=>c instanceof THREE.Points);
+function animParticles(){
+    requestAnimationFrame(animParticles);
+    if(!particles) return;
+    const a = particles.geometry.attributes.position.array;
+    for(let i=0;i<PC;i++){
+        a[i*3+1]+=pSpd[i]; a[i*3]+=Math.sin(clock.getElapsedTime()+i*.1)*.0008;
+        if(a[i*3+1]>6){a[i*3+1]=0;a[i*3]=(Math.random()-.5)*16;a[i*3+2]=(Math.random()-.5)*10;}
+    }
+    particles.geometry.attributes.position.needsUpdate=true;
+}
+
+/* ── Resize ── */
+window.addEventListener('resize',()=>{
+    camera.aspect=window.innerWidth/window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth,window.innerHeight);
+});
+
+/* ── Start ── */
+animate();
+animParticles();
+
+/* ── Reveal Observer ── */
+const rObs = new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('active')})},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>rObs.observe(el));
+
+/* ── Stat Counters ── */
+const sObs = new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting){
+    const el=en.target,tg=parseInt(el.dataset.target),sf=el.dataset.suffix||'';
+    let c=0;const st=tg/120;const ti=setInterval(()=>{c+=st;if(c>=tg){c=tg;clearInterval(ti)}el.textContent=Math.round(c)+sf;},16);sObs.unobserve(el);
+}})},{threshold:.4});
+document.querySelectorAll('.stat-number[data-target]').forEach(el=>sObs.observe(el));
+
+/* ── Loader ── */
+setTimeout(()=>{document.getElementById('loader').classList.add('hidden');setTimeout(()=>{document.querySelectorAll('#hero .reveal').forEach(el=>el.classList.add('active'));},250);},1000);
+
+</script>
+</body>
+</html>
